@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
- background-image: url('../assets/background.jpg');
- position: relative;
- background-attachment: fixed;
- background-size: cover;
- color: white;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    background-image: url('../assets/background.jpg');
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
 body::before {
     position: fixed;
     z-index: -1;
@@ -22,6 +27,18 @@ body::before {
 main {
     @apply max-w-5xl mx-auto py-5 px-5 lg:px-0;
 }
+
 .btn-primary {
     @apply bg-slate-100 text-slate-700 font-bold px-2 rounded-md duration-100 hover:scale-105 active:scale-95 flex items-center;
+}
+
+body::-webkit-scrollbar,.card::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body,.card {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
 }

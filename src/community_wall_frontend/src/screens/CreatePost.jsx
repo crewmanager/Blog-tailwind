@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import { community_wall_backend } from "../../../declarations/community_wall_backend";
 
 export default function CreatePost() {
 	const [content, setContent] = useState("");
 	const [title, setTitle] = useState("");
 
 	const navigator = useNavigate();
-	function savePost() {
+	async function savePost() {
+		const res = await community_wall_backend.addPost({ title, content });
 		navigator("../");
 		// TODO: Send Post to Backend and Save it
 	}

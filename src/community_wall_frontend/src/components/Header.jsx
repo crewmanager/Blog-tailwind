@@ -12,7 +12,7 @@ export default function Header({ isCreatePostPage, handlerFunction }) {
 					Save Post
 				</Link>
 			) : (
-				<Link to={"/create"} className="btn-primary">
+				<Link to={"/new"} className="btn-primary">
 					Create Post
 				</Link>
 			)}

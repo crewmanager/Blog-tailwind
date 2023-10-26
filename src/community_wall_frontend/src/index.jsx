@@ -7,7 +7,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import CreatePost from "./components/CreatePost.jsx";
+import CreatePost from "./screens/CreatePost.jsx";
+import Post from "./screens/Post";
 
 const router = createBrowserRouter([
 	{
@@ -15,8 +16,12 @@ const router = createBrowserRouter([
 		element: <App />,
 	},
 	{
-		path: "create",
+		path: "new",
 		element: <CreatePost />,
+	},
+	{
+		path: "/post/:id",
+		element: <Post />,
 	},
 ]);
 ReactDOM.createRoot(document.getElementById("app")).render(
